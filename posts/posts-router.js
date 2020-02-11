@@ -65,7 +65,30 @@ router.post('/', (req, res) => {
 
 //Updates the post with the specified id using data from the request body. Returns the modified document, NOT the original.
 router.put('/:id', (req, res) => {
+    if (!req.body.title || !req.body.contents) {
+        res.status(400).json({ errorMessage: "Please provide title and contents for the post." });
+    } else {
+        database.update(req.params.id, req.body).then(() => {
+            //returns 1 if successful
 
+            //check there is a post with this id and return it
+            database.findById(req.params.id).then(post => {
+                //returns an array
+                if (post.length > 0) {
+                    //return the modified post.
+                    res.status(201).json(post);
+                } else {
+                    res.status(404).json({ message: "The post with the specified ID does not exist." });
+                }
+            }).catch(err => {
+                console.log(err);
+                res.status(500).json({ message: "Something went wrong. There was an error when trying to find a post with the specified ID." });
+            });
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json({ error: "The post information could not be modified." });
+        });
+    }
 });
 
 //Removes the post with the specified id and returns the deleted post object.

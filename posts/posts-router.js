@@ -43,7 +43,23 @@ router.post('/', (req, res) => {
     if (!req.body.title || !req.body.contents) {
         res.status(404).json({ errorMessage: "Please provide title and contents for the post." });
     } else {
-        
+        database.insert(req.body).then(({ id }) => {
+            //return the newly created post.
+            database.findById(id).then(post => {
+                //returns an array
+                if (post.length > 0) {
+                    res.status(201).json(post);
+                } else {
+                    res.status(404).json({ message: "Something went wrong when trying to retrieve the new post by id." });
+                }
+            }).catch(err => {
+                console.log(err);
+                res.status(500).json({ error: "The new post's information could not be retrieved." });
+            });
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json({ error: "There was an error while saving the post to the database" });
+        });
     }
 });
 

@@ -15,7 +15,12 @@ const router = express.Router();
 
 //Returns an array of all the post objects contained in the database.
 router.get('/', (req, res) => {
-
+    database.find().then(posts => {
+        res.status(200).json(posts);
+    }).catch(error => {
+        console.log(error);
+        res.status(500).json({ message: 'Error retrieving the posts' });
+    });
 });
 
 //Returns the post object with the specified id.

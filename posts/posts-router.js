@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
     database.findById(req.params.id).then(post => {
         //returns an array
         if (post.length > 0) {
-            res.status(200).json(post);
+            res.status(200).json(post[0]);
         } else {
             res.status(404).json({ message: "The post with the specified ID does not exist." });
         }
@@ -94,7 +94,25 @@ router.put('/:id', (req, res) => {
 //Removes the post with the specified id and returns the deleted post object.
 //You may need to make additional calls to the database in order to satisfy this requirement.
 router.delete('/:id', (req, res) => {
-
+    //check if there is a post with this id
+    database.findById(req.params.id).then(post => {
+        //returns an array
+        if (post.length > 0) {
+            //post found
+            database.remove(req.params.id).then(() => {
+                //returns number of items deleted
+                res.status(200).json(post[0]);
+            }).catch(err => {
+                console.log(err);
+                res.status(500).json({ error: "The post could not be removed" });
+            });
+        } else {
+            res.status(404).json({ message: "The post with the specified ID does not exist." });
+        }
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ error: "The post could not be removed" });
+    });
 });
 
 /* ############### COMMENTS ############### */

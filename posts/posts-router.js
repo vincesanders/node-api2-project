@@ -140,7 +140,34 @@ router.get('/:id/comments', (req, res) => {
 
 //Creates a comment for the post with the specified id using information sent inside of the request body.
 router.post('/:id/comments', (req, res) => {
-
+    if (!req.body.text) {
+        res.status(400).json({ errorMessage: "Please provide text for the comment." });
+    } else {
+        database.findById(req.params.id).then(post => {
+            //returns an array
+            if (post.length > 0) {
+                //the post exists
+                //make sure the comment includes the post id
+                const commentToAdd = {...req.body, post_id: parseInt(req.params.id)}
+                database.insertComment(commentToAdd).then(({ id }) => {
+                    database.findCommentById(id).then(commentArr => {
+                        res.status(201).json(commentArr[0]);
+                    }).catch(err => {
+                        console.log(err);
+                        res.status(500).json({ error: "The comment information could not be retrieved." })
+                    });
+                }).catch(err => {
+                    console.log(err);
+                    res.status(500).json({ error: "There was an error while saving the comment to the database" });
+                });
+            } else {
+                res.status(404).json({ message: "The post with the specified ID does not exist." });
+            }
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json({ error: "The post information could not be retrieved." });
+        });
+    }
 });
 
 module.exports = router;

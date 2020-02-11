@@ -17,9 +17,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
     database.find().then(posts => {
         res.status(200).json(posts);
-    }).catch(error => {
-        console.log(error);
-        res.status(500).json({ message: 'Error retrieving the posts' });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ error: "The posts information could not be retrieved." });
     });
 });
 
@@ -30,17 +30,21 @@ router.get('/:id', (req, res) => {
         if (post.length > 0) {
             res.status(200).json(post);
         } else {
-            res.status(404).json({ message: 'Post not found' });
+            res.status(404).json({ message: "The post with the specified ID does not exist." });
         }
-    }).catch(error => {
-        console.log(error);
-        res.status(500).json({ message: 'Error retrieving the post' });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({ error: "The post information could not be retrieved." });
     });
 });
 
 //Creates a post using the information sent inside the request body.
 router.post('/', (req, res) => {
-
+    if (!req.body.title || !req.body.contents) {
+        res.status(404).json({ errorMessage: "Please provide title and contents for the post." });
+    } else {
+        
+    }
 });
 
 //Updates the post with the specified id using data from the request body. Returns the modified document, NOT the original.

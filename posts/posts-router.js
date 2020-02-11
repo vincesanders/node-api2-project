@@ -25,7 +25,17 @@ router.get('/', (req, res) => {
 
 //Returns the post object with the specified id.
 router.get('/:id', (req, res) => {
-
+    database.findById(req.params.id).then(post => {
+        //returns an array
+        if (post.length > 0) {
+            res.status(200).json(post);
+        } else {
+            res.status(404).json({ message: 'Post not found' });
+        }
+    }).catch(error => {
+        console.log(error);
+        res.status(500).json({ message: 'Error retrieving the post' });
+    });
 });
 
 //Creates a post using the information sent inside the request body.

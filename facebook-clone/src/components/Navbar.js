@@ -5,6 +5,7 @@ import { faFacebookSquare, faFacebookMessenger } from '@fortawesome/free-brands-
 import { faUserFriends, faBell, faQuestionCircle, faCaretDown, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = styled.nav`
+    top: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;

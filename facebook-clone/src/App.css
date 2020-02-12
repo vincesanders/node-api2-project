@@ -1,38 +1,74 @@
 .App {
   text-align: center;
+  background-color: #e9ebee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.news-feed-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: 0 -482px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.messenger-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: 0 -293px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.watch-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -608px;
 }
 
-.App-link {
-  color: #61dafb;
+.marketplace-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -461px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.group-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -524px;
+}
+
+.tent-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -588px;
+}
+
+.book-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -42px;
+}
+
+.guild-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -126px;
+}
+
+.pages-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -21px -293px;
+}
+
+.groups-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -21px -272px;
+}
+
+.events-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -46px;
+}
+
+.fundraisers-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -419px;
+}
+
+.friendlists-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: 0 -419px;
+}
+
+.addchoices-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-3.png');
+  background-position: -17px -281px;
 }

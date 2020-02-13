@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+  background-color: #e9ebee;
+}
+
+.news-feed-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: 0 -482px;
+}
+
+.messenger-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: 0 -293px;
+}
+
+.watch-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -608px;
+}
+
+.marketplace-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -461px;
+}
+
+.group-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -524px;
+}
+
+.tent-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -588px;
+}
+
+.book-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -42px;
+}
+
+.guild-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -126px;
+}
+
+.pages-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -21px -293px;
+}
+
+.groups-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -21px -272px;
+}
+
+.events-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-2.png');
+  background-position: 0 -46px;
+}
+
+.fundraisers-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: -42px -419px;
+}
+
+.friendlists-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map.png');
+  background-position: 0 -419px;
+}
+
+.addchoices-icon {
+  background-image: url('D:/Lambda/node-api2-project/facebook-clone/src/assets/facebook-image-map-3.png');
+  background-position: -17px -281px;
+}
